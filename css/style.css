@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
+  --dairy: #fcfcfc;
   --ocean: #404bbf;
   --iris: #4d5ae5;
   --cornflower: #e7e9fc;
@@ -10,6 +11,8 @@
   --green: #31d0aa;
   --lightslate: #8e8f99;
   font-size: 16px;
+  --time-effects: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -38,10 +41,6 @@ figcaption {
   text-align: center;
 }
 
-button {
-  all: unset;
-  cursor: pointer;
-}
 h1,
 h2,
 h3 {
@@ -118,13 +117,26 @@ a {
   letter-spacing: 0.32px;
 }
 
+.nav-link-item {
+  position: relative;
+  display: flex;
+}
+.nav-link-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 44px;
+  border-radius: 2px;
+  background: var(--ocean);
+}
+
 .nav-link:hover,
 .contact-link:hover,
 .nav-link:focus,
 .contact-link:focus {
   color: var(--ocean);
 }
-
 header {
   border-bottom: 1px solid var(--cornflower);
 }
@@ -172,8 +184,10 @@ footer .inner-container {
   margin: 0 auto 48px;
   max-width: 496px;
 }
-
-.hero-section button {
+.cursor-pinter {
+  cursor: pointer;
+}
+.hero-section .button-primary {
   border-radius: 4px;
   background: var(--iris);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
@@ -181,8 +195,8 @@ footer .inner-container {
   color: white;
 }
 
-.hero-section button:hover,
-.hero-section button:focus {
+.hero-section .button-primary:hover,
+.hero-section .button-primary:focus {
   background-color: var(--ocean);
 }
 
@@ -195,7 +209,7 @@ footer .inner-container {
   padding: 24px 100px;
   margin-bottom: 8px;
 }
-.filter-bar button {
+.filter-bar .button-primary {
   border-radius: 4px;
   border: 1px solid var(--cornflower, #e7e9fc);
   background: var(--cloud, #f4f4fd);
@@ -210,8 +224,8 @@ footer .inner-container {
   line-height: 1.5;
 }
 
-.filter-bar button:hover,
-.filter-bar button:focus {
+.filter-bar .button-primary:hover,
+.filter-bar .button:focus {
   background-color: var(--ocean);
   color: white;
 }
@@ -296,7 +310,7 @@ footer .inner-container {
 }
 
 .transition-quick-all {
-  transition: all 0.2s ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 /* header */
@@ -402,7 +416,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s all ease-in-out;
+  transition: 250ms all ease-in-out;
   cursor: pointer;
 }
 
@@ -430,4 +444,57 @@ footer .social-media-svg:focus {
 
 .margin-bottom-medium {
   margin-bottom: 1em;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 500ms;
+}
+
+.modal {
+  width: 408px;
+  height: 584px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: #fcfcfc;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.close-button {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--cornflower);
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+.close-button:hover,
+.close-button:active {
+  background-color: var(--ocean);
+  fill: #fff;
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button-pointer {
+  all: unset;
+  cursor: pointer;
 }

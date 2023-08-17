@@ -17,15 +17,18 @@
             <nav class="margin-right-auto display-flex">
                 <a class="homepage-link" href="#"><span>Web</span>Studio</a>
                 <ul class="flex gap-regular">
-                    <li><a class="nav-link text-shadow transition-quick-all" href="./index.html">Studio</a></li>
-                    <li><a class="nav-link text-shadow transition-quick-all" href="./portfolio.html">Portfolio</a></li>
+                    <li><a class="nav-link  text-shadow transition-quick-all nav-link-item"
+                           href="./index.html">Studio</a></li>
+                    <li><a class="nav-link text-shadow transition-quick-all" href="./portfolio.html">Portfolio</a>
+                    </li>
                     <li><a class="nav-link text-shadow transition-quick-all" href="/#">Contacts</a></li>
                 </ul>
             </nav>
             <ul class="flex gap-regular">
                 <li><a class="contact-link transition-quick-all" href="mailto:info@devstudio.com">info@devstudio.com</a>
                 </li>
-                <li><a class="contact-link transition-quick-all" href="tel:+11(000)111-11-11">+11(000)111-11-11</a></li>
+                <li><a class="contact-link transition-quick-all" href="tel:+11(000)111-11-11">+11(000)111-11-11</a>
+                </li>
             </ul>
         </div>
 
@@ -34,7 +37,18 @@
         <section class="hero-section">
             <div class="container">
                 <h1>Effective Solutions for Your Business</h1>
-                <button type="button" class="transition-quick-all">Order Service</button>
+                <button type="button" class="button-white transition-quick-all button-primary button-pointer"
+                        data-modal-open>Order
+                    Service</button>
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal">
+                        <button type="button" class="close-button" data-modal-close>
+                            <svg width="8" height="8">
+                                <use href="./images/icon-close.svg#icon-close-black"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="boasting p-t-120 p-b-120">
@@ -60,7 +74,8 @@
                             </svg>
                         </div>
                         <h3>Punctuality</h3>
-                        <p class="body-medium font-color-slate">Bring the key message to the brand's audience for the
+                        <p class="body-medium font-color-slate">Bring the key message to the brand's audience for
+                            the
                             best
                             price
                             within the shortest possible time.</p>
@@ -72,7 +87,8 @@
                             </svg>
                         </div>
                         <h3>Diligence</h3>
-                        <p class="body-medium font-color-slate">Research and confirm brands that present the strongest
+                        <p class="body-medium font-color-slate">Research and confirm brands that present the
+                            strongest
                             digital
                             growth opportunities and minimize risk.</p>
 
@@ -85,7 +101,8 @@
                         </div>
 
                         <h3>Technologies</h3>
-                        <p class="body-medium font-color-slate">Design practice focused on digital experiences. We bring
+                        <p class="body-medium font-color-slate">Design practice focused on digital experiences. We
+                            bring
                             forth
                             a
                             deep passion for problem-solving.</p>
@@ -289,43 +306,43 @@
         <ul class="display-flex justify-content-center column-gap-small row-gap-small wrap">
 
             <li>
-                <a href="#">
+                <a href="#" class="transition-quick-all">
                     <svg class="logo-customers fill-lightslate ">
                         <use href="./images/icons.svg#icon-Logo"></use>
                     </svg>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" class="transition-quick-all">
                     <svg class="logo-customers fill-lightslate">
                         <use href="./images/icons.svg#icon-Logo-1"></use>
                     </svg>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" class="transition-quick-all">
                     <svg class="logo-customers fill-lightslate">
                         <use href="./images/icons.svg#icon-Logo-2"></use>
                     </svg>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" class="transition-quick-all">
                     <svg class="logo-customers fill-lightslate">
                         <use href="./images/icons.svg#icon-Logo-5"></use>
                     </svg>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" class="transition-quick-all">
                     <svg class="logo-customers fill-lightslate">
                         <use href="./images/icons.svg#icon-Logo-3"></use>
                     </svg>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <svg class="logo-customers fill-lightslate">
+                <a href="#" class="transition-quick-all">
+                    <svg class="logo-customers fill-lightslate ">
                         <use href="./images/icons.svg#icon-Logo-4"></use>
                     </svg>
                 </a>
@@ -376,7 +393,8 @@
             </div>
         </div>
     </footer>
-
+    <script src="js/modal.js">
+    </script>
 </body>
 
 </html>
