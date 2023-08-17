@@ -48,7 +48,7 @@ h3 {
   padding: 0;
 }
 
-p {
+.p-color {
   margin: 0.5em 0;
   color: var(--slate);
   line-height: 1.5;
@@ -119,7 +119,6 @@ a {
 
 .nav-link-item {
   position: relative;
-  display: flex;
 }
 .nav-link-item::after {
   content: "";
@@ -129,6 +128,7 @@ a {
   top: 44px;
   border-radius: 2px;
   background: var(--ocean);
+  left: 0;
 }
 
 .nav-link:hover,
@@ -162,7 +162,6 @@ footer .inner-container {
   width: 264px;
 }
 .hero-section {
-  /* background-image:; */
   background-color: var(--color-heading-primary);
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
   background-repeat: no-repeat;
@@ -171,9 +170,6 @@ footer .inner-container {
   padding: 188px 0;
   background-size: cover;
 }
-/* .hero-section > .container > h1 {
-  margin: auto;
-} */
 
 .hero-section h1 {
   font-size: 56px;
@@ -338,11 +334,21 @@ header .flex {
 
 .px-16 {
   padding-left: 24px;
-  padding-right: 24 px;
+  padding-right: 24px;
 }
 .px-16-2 {
   padding-left: 24px;
 }
+
+.px-32 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
 .margin-right-auto {
   margin-right: auto;
 }
@@ -448,10 +454,7 @@ footer .social-media-svg:focus {
 
 .backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   transition: opacity 500ms;
 }
@@ -497,4 +500,38 @@ footer .social-media-svg:focus {
 .button-pointer {
   all: unset;
   cursor: pointer;
+}
+
+.overlay-portfolio {
+  z-index: 1;
+  inset: 0;
+  background-color: var(--iris);
+  color: var(--cloud);
+  /* translate: 0 100% 0; */
+  transform: translateY(100%);
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list li:hover .overlay-portfolio {
+  transform: translateY(0);
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.position-portfolio {
+  overflow: hidden;
+
+  /* position: relative; */
 }
